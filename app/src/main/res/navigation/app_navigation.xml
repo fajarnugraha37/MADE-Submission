@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@+id/navigation_search">
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.githubapp.ui.home.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_developer"
+            app:destination="@id/navigation_developer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.example.githubapp.ui.home.favorite.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_developer"
+            app:destination="@id/navigation_developer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.githubapp.ui.detail.DetailFragment"
+        android:label="@string/title_detail"
+        tools:layout="@layout/fragment_detail" />
+
+    <fragment
+        android:id="@+id/navigation_developer"
+        android:name="com.example.githubapp.ui.detail.DetailFragment"
+        android:label="@string/title_developer"
+        tools:layout="@layout/fragment_developer" />
+    <action
+        android:id="@+id/action_global_navigation_search"
+        app:destination="@id/navigation_search"
+        app:popUpToInclusive="false" />
+    <action
+        android:id="@+id/action_global_navigation_favorite"
+        app:destination="@id/navigation_favorite"
+        app:popUpToInclusive="false" />
+</navigation>
